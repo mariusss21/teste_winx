@@ -66,7 +66,7 @@ def perguntas():
 
         with col2:
             st.write('Falta de padrão nas respostas:')
-            st.write(f'Gender: {df.gender.unique}')
+            st.write(f'Gender: {df.gender.unique()}')
 
     with st.expander('2. Esses dados já proveem algum tipo de insight? Quais?'):
         st.markdown("""
