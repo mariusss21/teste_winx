@@ -266,7 +266,7 @@ def introducao():
     st.subheader('Como funciona?')
     st.markdown("""
 O projeto foi dividido em duas partes: \n
-* Dashboard: Onde é possível visualizar os dados fornecidos e extrair alguns insights. Há muitas opções de análise a serem exploradas e eu escolhi o caminho de avaliar como estão as avaliações das 
+* Dashboard: Onde é possível visualizar os dados fornecidos e extrair alguns insights. Há muitas opções de análise a serem exploradas e eu escolhi o caminho de avaliar como estão as avaliações das \
 empresas considerando os temas dos questionários. Então coloquei filros para os temas e plo histogramas para comparar as empresas e logo abaixo como elas estão pontuando (ótimo, regular ou péssimo) em relação aos temas. \n
 * Perguntas: São respondidas as perguntas enviadas pela empresa.
     """)
