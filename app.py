@@ -79,9 +79,9 @@ def perguntas():
     with st.expander('2. Esses dados já proveem algum tipo de insight? Quais?'):
         st.markdown("""
             Ao selecionar a opção dashboard, o usuário pode visualizar gráficos e informações que são relevantes para a empresa. \n
-            # Gráficos: 
+            ## Gráficos: 
             * Do tipo histograma onde podemos ver a distribuição das respostas dos colaboradores para as questões levantadas divididas por pesquisa\n
-            # Resultado: \n
+            ## Resultado: \n
             * Ótimo: 80% ou mais de respostas “concordo totalmente” e "concordo parcialmente". \n
             * Regular: entre 70% e 79% de respostas “concordo totalmente” "concordo parcialmente". \n
             * Péssimo: 69% ou menos de respostas “concordo totalmente" e "concordo parcialmente". \n
