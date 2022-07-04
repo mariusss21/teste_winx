@@ -132,9 +132,10 @@ def dashboard(df: pd.DataFrame) -> None:
     st.title('Dashboard')
     col1, col2, col3, col4 = st.columns(4)
 
-    modo_vis = col1.selectbox('Modo de visualização:', ['Empresa', 'Survey'])
+    modo_vis = col1.selectbox('Modo de visualização:', ['Survey', 'Empresa'])
 
-    if modo_vis == 'Empresa':
+    if modo_vis == 'Survey':
+        st.subheader('Dados por questionário')
         empresa_survey = col2.selectbox('Survey:', list(df.survey.unique()))
 
         df_empresa_a = df[(df.survey == empresa_survey) & (df.company_id == 'Empresa A')]
