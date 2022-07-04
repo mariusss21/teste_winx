@@ -3,6 +3,8 @@ import streamlit as st
 import pandas as pd
 import time
 import plotly.graph_objects as go
+import plotly.figure_factory as ff
+
 
 ######################################################################################################
 				#Configuraaaes da pagina
@@ -135,7 +137,11 @@ def dashboard(df: pd.DataFrame) -> None:
 
         emp_a, emp_b, emp_c = st.columns(3)
 
+        fig = ff.create_distplot(df_empresa_a.value, ['Empresa A'], bin_size=[.1, .25, .5])
+        emp_a.plotly_chart(fig, use_container_width=True)
         emp_a.write(df_empresa_a)
+
+
         emp_b.write(df_empresa_b)
         emp_c.write(df_empresa_c)
 
