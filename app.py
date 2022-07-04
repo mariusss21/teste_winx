@@ -50,7 +50,7 @@ def perguntas():
     with st.expander('1. Existe alguma falha ou oportunidade de melhoria na forma como os dados estão sendo registrados?'):
         st.markdown("""
             * Alguns campos possuem dados faltantes impactando na análise dados e atrapalhando a utilização de modelos de machine learning (as linhas precisam ser deletadas ou preenchidas) \n
-            * Há fálta de padrão nas respostas em alguns campos como gender, home_time e age_group. Em alguns casos dá pra tratar manualmente a informação (caso do gender), nos outros o ideal é corrigir nos formulários \n
+            * Há falta de padrão nas respostas em alguns campos como gender, home_time e age_group. Em alguns casos dá pra tratar manualmente a informação (caso do gender), nos outros o ideal é corrigir nos formulários \n
             * Há dados de tempo em que as respostas mudam de unidade (parte em meses e parte em anos)
         """)
         col1, col2, col3 = st.columns(3)
@@ -62,7 +62,11 @@ def perguntas():
             df_null = df_null[df_null['Quantidade'] > 0]
             df_null['%'] = (df_null['Quantidade'] / df.shape[0]) * 100
             df_null['%'] = df_null['%'].astype(int)
-            col1.dataframe(df_null)
+            st.dataframe(df_null)
+
+        with col2:
+            st.write('Falta de padrão nas respostas:')
+            st.write(f'Gender: {df.gender.unique}')
 
     with st.expander('2. Esses dados já proveem algum tipo de insight? Quais?'):
         st.markdown("""
