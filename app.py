@@ -4,7 +4,7 @@ import pandas as pd
 import time
 import plotly.graph_objects as go
 import plotly.figure_factory as ff
-
+import scipy
 
 ######################################################################################################
 				#Configuraaaes da pagina
@@ -116,6 +116,13 @@ def data_treatement() -> pd.DataFrame:
     df = pd.read_csv('data.csv', sep=',' )
     st.write(df.company_id.unique())
 
+    df['answer'] = df['values'].map({1: 'Concordo totalmente',
+                                    2: 'Concordo parcialmente',
+                                    3: 'Não concordo nem discordo',
+                                    4: 'Discordo parcialmente',
+                                    5: 'Discordo totalmente',
+                                    0: 'Não se aplica'})
+
     df.company_id = df['company_id'].str.replace('95dfed2b-32aa-46f1-935a-5c6356327bd6', 'Empresa A')
     df.company_id = df['company_id'].str.replace('95dfed2b-3371-42b3-8d58-b25285353bd4', 'Empresa B')
     df.company_id = df['company_id'].str.replace('95dfed2b-33fe-4765-965e-0177bb4a65aa', 'Empresa C')
@@ -137,7 +144,7 @@ def dashboard(df: pd.DataFrame) -> None:
 
         emp_a, emp_b, emp_c = st.columns(3)
 
-        fig = ff.create_distplot([df_empresa_a.value], ['Empresa A'], bin_size=[.1, .25, .5])
+        fig = ff.create_distplot([df_empresa_a.value], ['Empresa A'], bin_size=[1])
         emp_a.plotly_chart(fig, use_container_width=True)
         emp_a.write(df_empresa_a)
 
