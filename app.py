@@ -110,10 +110,14 @@ def perguntas():
         """)
 
 
-def data_treatement():
+def data_treatement() -> pd.DataFrame:
     df = pd.read_csv('data.csv', sep=',' )
     st.write(df.company_id.unique())
+    
+    
+def dashboard(df: pd.DataFrame) -> None:
     pass
+
 
 ######################################################################################################
 # sidebar
@@ -127,3 +131,6 @@ if __name__ == '__main__':
     if tela_selecionada == 'Perguntas':
         perguntas()
 
+    if tela_selecionada == 'Dashboard':
+        df = data_treatement()
+        dashboard(df)
