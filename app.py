@@ -127,11 +127,11 @@ def dashboard(df: pd.DataFrame) -> None:
     modo_vis = col1.selectbox('Modo de visualização', ['Empresa', 'Survey'])
 
     if modo_vis == 'Empresa':
-        empresa_survey = col2.selectbox('Survey', list(df.engagement.unique()))
+        empresa_survey = col2.selectbox('Survey', list(df.survey.unique()))
 
-        df_empresa_a = df[(df.engagement == empresa_survey) & (df.company_id == 'Empresa A')]
-        df_empresa_b = df[(df.engagement == empresa_survey) & (df.company_id == 'Empresa B')]
-        df_empresa_c = df[(df.engagement == empresa_survey) & (df.company_id == 'Empresa C')]
+        df_empresa_a = df[(df.survey == empresa_survey) & (df.survey == 'Empresa A')]
+        df_empresa_b = df[(df.survey == empresa_survey) & (df.survey == 'Empresa B')]
+        df_empresa_c = df[(df.survey == empresa_survey) & (df.survey == 'Empresa C')]
 
         emp_a, emp_b, emp_c = st.columns(3)
 
