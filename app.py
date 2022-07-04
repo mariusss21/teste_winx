@@ -45,7 +45,7 @@ div.streamlit-expanderHeader{
 
 
 def perguntas():
-    df = pd.read_csv('data.csv', sep=';', encoding='latin1', )
+    df = pd.read_csv('data.csv', sep=',', encoding='latin1', )
     st.title('Perguntas e respostas')
     with st.expander('1. Existe alguma falha ou oportunidade de melhoria na forma como os dados estão sendo registrados?'):
         st.markdown("""
