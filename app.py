@@ -78,7 +78,12 @@ def perguntas():
 
     with st.expander('2. Esses dados já proveem algum tipo de insight? Quais?'):
         st.markdown("""
-            * Dashboard
+            Ao selecionar a opção dashboard, o usuário pode visualizar gráficos e informações que são relevantes para a empresa. \n
+            * Gráficos: Do tipo histograma onde podemos ver a distribuição das respostas dos colaboradores para as questões levantadas divididas por pesquisa\n
+            * Resultado: 
+            ** Ótimo: 80% ou mais de respostas “concordo totalmente” e "concordo parcialmente". 
+            ** Regular: entre 70% e 79% de respostas “concordo totalmente” "concordo parcialmente".
+            ** Péssimo: 69% ou menos de respostas “concordo totalmente" e "concordo parcialmente".
         """)
 
     with st.expander('3. No curto prazo, queremos criar uma associação das estatísticas de algumas das respostas com recomendações práticas do que fazer para empresa. O quão difícil seria fazer isso? Qual seria o caminho?'):
@@ -234,19 +239,6 @@ def dashboard(df: pd.DataFrame) -> None:
 4: 'Discordo parcialmente'\n
 5: 'Discordo totalmente'\n
 0: 'Não se aplica'\n''')
-
-        # fig = ff.create_distplot([df_empresa_a.value], ['A'], bin_size=[1])
-        # emp_a.plotly_chart(fig, use_container_width=True)
-
-        # fig = ff.create_distplot([df_empresa_b.value], ['B'], bin_size=[1])
-        # emp_b.plotly_chart(fig, use_container_width=True)
-
-        # fig = ff.create_distplot([df_empresa_c.value], ['C'], bin_size=[1])
-        # emp_c.plotly_chart(fig, use_container_width=True)
-        
-        # emp_a.write(df_empresa_a)
-        # emp_b.write(df_empresa_b)
-        # emp_c.write(df_empresa_c)
 
 
 
