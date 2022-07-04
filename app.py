@@ -53,9 +53,11 @@ def perguntas():
             * Há fálta de padrão nas respostas em alguns campos como gender, home_time e age_group. Em alguns casos dá pra tratar manualmente a informação (caso do gender), nos outros o ideal é corrigir nos formulários \n
             * Há dados de tempo em que as respostas mudam de unidade (parte em meses e parte em anos)
         """)
+        col1, col2, col3 = st.columns(3)
 
-        st.write('Dados faltantes por colunas:')
-        st.write(df.isnull.sum())
+        with col1:
+            st.write('Dados faltantes por colunas:')
+            st.write(df.isnull().sum())
 
     with st.expander('2. Esses dados já proveem algum tipo de insight? Quais?'):
         st.markdown("""
