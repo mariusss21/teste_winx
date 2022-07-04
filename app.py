@@ -65,19 +65,20 @@ def perguntas():
 
     with st.expander('4. Qual a estrutura ideal de banco de dados mais adequada para esse tipo de pesquisa e que permita, no futuro, aplicação de AI?'):
         st.markdown("""
-            A escolha do banco depende muito do tipo de uso que daremos pros dados, há algumas perguntas importantes a serem respondidas, como: \n
+            A escolha do banco depende muito do tipo de uso que daremos para os dados, há algumas perguntas importantes a serem respondidas, como: \n
             * Quem vai consumir esses dados? \n
             * Qual será a finalidade desses dados? \n
             \n
-            Uma estrutura simples e adequada para o uso de dados são os bancos relacionais. Neles podemos colocar diversas tabelas de dados inclusive separando por estágios, 
+            Deixando um pouco essas lacunas de lado, podemos utilizar bancos de dados relacionais como PostgreSQL, MySQL entre outros. Neles podemos criar diversas tabelas de dados, inclusive separando por estágios, 
             como dados brutos (no formato que são coletados), dados processados (remoção de dados faltantes, tratamento de variáveis catgóricas) e dados analíticos (dados já formatados para uma dashboard).
         """)
 
     with st.expander('5. Quais as aplicações mais adequadas que devemos utilizar nesse estágio para evitar retrabalho no futuro?'):
         st.markdown("""
             Há diversas ferramentas que podem ser utilizadas e a definição delas depende bastante do contexto do que queremos entregar. Questões como onde iremos hospedar as aplicações (cloud ou on-premise) e o custo impactam diretamente nessa decisão.\n
-            Apesar dessas icógnitas, há alguns pontos que podem ser considerados previamente, por exemplo utilizar Python como liguagem de programação por possuir vasta gama de bibliotecas voltadas pra dados. Pode-se também se utlizar o Airflow para
-            orquestar as aplicações, tendo em vista que pode rodar local ou na nuvem.
+            Apesar dessas icógnitas, há alguns pontos que podem ser considerados previamente, por exemplo utilizar Python como liguagem de programação por possuir vasta gama de bibliotecas voltadas para dados. Pode-se também se utlizar o Airflow para
+            orquestar as aplicações, tendo em vista que pode rodar local ou na nuvem. Essa combinação de ferramentas já nos permite resolver uma grande gama de problemas relacionados a dados como a coleta, tratamento, análise estatística e 
+            aplicação de modelos de machine learning.
         """)
 
     with st.expander('6. Que caminho você seguiria para criar um dashboard para utilização interna e externa com estes dados? Qual ferramenta utilizaria e como faria o desenvolvimento?'):
