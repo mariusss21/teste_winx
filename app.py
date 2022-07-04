@@ -57,7 +57,8 @@ def perguntas():
 
         with col1:
             st.write('Dados faltantes por colunas:')
-            df_null = pd.Dataframe.from_dict(dict(df.isnull().sum()))
+            df_null = pd.DataFrame()
+            df_null['Quantidade'] = df.isnull().sum()
             df_null = df_null[df_null > 0]
             df_null['Percentual'] = 0
             #df_null.columns.values[0] = 'Quantidade'
