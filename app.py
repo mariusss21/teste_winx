@@ -144,18 +144,17 @@ def dashboard(df: pd.DataFrame) -> None:
 
         emp_a, emp_b, emp_c, legenda = st.columns(4)
 
-        with emp_a:
-            fig = go.Figure(data=[go.Histogram(x=df_empresa_a.value, histnorm='percent')])
-            fig.update_layout(barmode='stack',
-                #width=440, 
-                height=250,
-                margin=dict(b=5,	t=35,	l=0,	r=0),
-                title='Empresa A',
-                font=dict(size=15))
+        fig = go.Figure(data=[go.Histogram(x=df_empresa_a.value, histnorm='percent')])
+        fig.update_layout(barmode='stack',
+            #width=440, 
+            height=250,
+            margin=dict(b=5,	t=35,	l=0,	r=0),
+            title='Empresa A',
+            font=dict(size=15))
 
-            fig.update_traces(textposition='inside', textfont_color='rgb(255,255,255)', textfont_size=20) #marker_color='rgb(55,83,109)',
-            fig.update_yaxes(range = [0, 100])
-            emp_a.plotly_chart(fig, use_container_width=True)
+        fig.update_traces(textposition='inside', textfont_color='rgb(255,255,255)', textfont_size=20) #marker_color='rgb(55,83,109)',
+        fig.update_yaxes(range = [0, 100])
+        emp_a.plotly_chart(fig, use_container_width=True)
             # emp_a.write(fig)
 
         fig = go.Figure(data=[go.Histogram(x=df_empresa_b.value, histnorm='percent')])
@@ -168,7 +167,7 @@ def dashboard(df: pd.DataFrame) -> None:
 
         fig.update_traces(textposition='inside', textfont_color='rgb(255,255,255)', textfont_size=20) #marker_color='rgb(55,83,109)',
         fig.update_yaxes(range = [0, 100])
-        emp_b.write(fig)
+        emp_b.plotly_chart(fig, use_container_width=True)
 
 
         fig = go.Figure(data=[go.Histogram(x=df_empresa_c.value, histnorm='percent')])
@@ -181,7 +180,7 @@ def dashboard(df: pd.DataFrame) -> None:
 
         fig.update_traces(textposition='inside', textfont_color='rgb(255,255,255)', textfont_size=20) #marker_color='rgb(55,83,109)',
         fig.update_yaxes(range = [0, 100])
-        emp_c.write(fig)
+        emp_c.plotly_chart(fig, use_container_width=True)
 
         legenda.write('''
 **Legenda:** \n
