@@ -101,7 +101,7 @@ def perguntas():
             Enxergo como possibilidade o seguinte caminho: \n
             * Coletar mais dados (quantidade e qualidade são importantes) \n
             * Identificar padrões nas respostas, monitorar as avaliações dos colaboradores no tempo, se elas tem melhorado ou não e capturar as red flags (exemplo: avaliações muito ruins) \n
-            * Identificando esses casos, teremos que tomar ações coerentes com a regra de negócio da companhia (ter alguma reunião com o colaborador) e traçar ações \n
+            * Identificando esses casos, teremos que tomar ações coerentes com a regra de negócio da companhia (exemplo: ter alguma reunião com o colaborador ou com o líder) e traçar ações para tratar a questão \n
             * Gerar dados sobre essas ações e os resultados obtidos \n
             * Com esses dados dos resultados começar a gerar sugestões de ações para a empresa \n
         """)
