@@ -163,16 +163,16 @@ def dashboard(df: pd.DataFrame) -> None:
 
             df_analise_a = df_empresa_a[['employee', 'count', 'answer']].groupby(['employee']).sum()
             df_analise_a['percent'] = (df_analise_a['answer'] / df_analise_a['count']) * 100
-            st.write('**Avalição dos funcionários no questionário **')
+            st.subheader('Avalição dos funcionários no questionário')
 
-            otimo = str((df_analise_a.loc[df_analise_a['percent'] > 80, 'percent'].shape[0])/df_analise_a.shape[0] * 100) + '%'
+            otimo = str((df_analise_a.loc[df_analise_a['percent'] >= 80, 'percent'].shape[0])/df_analise_a.shape[0] * 100) + '%'
             st.write(f"**Ótimo:** {otimo}")
 
+            regular = str((df_analise_a.loc[(df_analise_a['percent'] < 80) & (df_analise_a['percent'] >= 70), 'percent'].shape[0])/df_analise_a.shape[0] * 100) + '%'
+            st.write(f"**Regular:** {regular}")
 
-            st.write(f"**Regular:** {str(df_analise_a.loc[df_analise_a['percent'] > 80, 'percent'].shape[0])}")
-
-
-            st.write(f"**Ruim:** {str(df_analise_a.loc[df_analise_a['percent'] > 80, 'percent'].shape[0])}")
+            ruim = str((df_analise_a.loc[df_analise_a['percent'] < 70, 'percent'].shape[0])/df_analise_a.shape[0] * 100) + '%'
+            st.write(f"**Ruim:** {ruim}")
 
         
         fig = go.Figure(data=[go.Histogram(x=df_empresa_b.value, histnorm='percent')])
