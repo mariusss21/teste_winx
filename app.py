@@ -117,13 +117,28 @@ def data_treatement() -> pd.DataFrame:
     df.company_id = df['company_id'].str.replace('95dfed2b-32aa-46f1-935a-5c6356327bd6', 'Empresa A')
     df.company_id = df['company_id'].str.replace('95dfed2b-3371-42b3-8d58-b25285353bd4', 'Empresa B')
     df.company_id = df['company_id'].str.replace('95dfed2b-33fe-4765-965e-0177bb4a65aa', 'Empresa C')
-
-    st.write(df)
-
+    return df
 
 
 def dashboard(df: pd.DataFrame) -> None:
-    pass
+    st.title('Dashboard')
+    col1, col2, col3, col4 = st.columns(4)
+
+    modo_vis = col1.selectbox('Modo de visualização', ['Empresa', 'Survey'])
+
+    if modo_vis == 'Empresa':
+        empresa_survey = col2.selectbox('Survey', list(df.engagement.unique()))
+
+        df_empresa_a = df[(df.engagement == empresa_survey) & (df.company_id == 'Empresa A')]
+        df_empresa_b = df[(df.engagement == empresa_survey) & (df.company_id == 'Empresa B')]
+        df_empresa_c = df[(df.engagement == empresa_survey) & (df.company_id == 'Empresa C')]
+
+        emp_a, emp_b, emp_c = st.columns(3)
+
+        emp_a.write(df_empresa_a)
+        emp_a.write(df_empresa_b)
+        emp_a.write(df_empresa_c)
+
 
 
 ######################################################################################################
