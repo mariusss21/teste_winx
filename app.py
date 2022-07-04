@@ -174,31 +174,57 @@ def dashboard(df: pd.DataFrame) -> None:
             ruim = str((df_analise_a.loc[df_analise_a['percent'] < 70, 'percent'].shape[0])/df_analise_a.shape[0] * 100) + '%'
             st.write(f"**Ruim:** {ruim}")
 
-        
-        fig = go.Figure(data=[go.Histogram(x=df_empresa_b.value, histnorm='percent')])
-        fig.update_layout(barmode='stack',
-            #width=440, 
-            height=250,
-            margin=dict(b=5,	t=35,	l=0,	r=0),
-            title='Empresa B',
-            font=dict(size=15))
+        with emp_b:
+            fig = go.Figure(data=[go.Histogram(x=df_empresa_b.value, histnorm='percent')])
+            fig.update_layout(barmode='stack',
+                #width=440, 
+                height=250,
+                margin=dict(b=5,	t=35,	l=0,	r=0),
+                title='Empresa B',
+                font=dict(size=15))
 
-        fig.update_traces(textposition='inside', textfont_color='rgb(255,255,255)', textfont_size=20) #marker_color='rgb(55,83,109)',
-        fig.update_yaxes(range = [0, 100])
-        emp_b.plotly_chart(fig, use_container_width=True)
+            fig.update_traces(textposition='inside', textfont_color='rgb(255,255,255)', textfont_size=20) #marker_color='rgb(55,83,109)',
+            fig.update_yaxes(range = [0, 100])
+            emp_b.plotly_chart(fig, use_container_width=True)
 
+            df_analise_b = df_empresa_b[['employee', 'count', 'answer']].groupby(['employee']).sum()
+            df_analise_b['percent'] = (df_analise_b['answer'] / df_analise_b['count']) * 100
+            st.subheader('Avaliação dos funcionários')
 
-        fig = go.Figure(data=[go.Histogram(x=df_empresa_c.value, histnorm='percent')])
-        fig.update_layout(barmode='stack',
-            #width=440, 
-            height=250,
-            margin=dict(b=5,	t=35,	l=0,	r=0),
-            title='Empresa C',
-            font=dict(size=15))
+            otimo = str((df_analise_b.loc[df_analise_b['percent'] >= 80, 'percent'].shape[0])/df_analise_b.shape[0] * 100) + '%'
+            st.write(f"**Ótimo:** {otimo}")
 
-        fig.update_traces(textposition='inside', textfont_color='rgb(255,255,255)', textfont_size=20) #marker_color='rgb(55,83,109)',
-        fig.update_yaxes(range = [0, 100])
-        emp_c.plotly_chart(fig, use_container_width=True)
+            regular = str((df_analise_b.loc[(df_analise_b['percent'] < 80) & (df_analise_b['percent'] >= 70), 'percent'].shape[0])/df_analise_b.shape[0] * 100) + '%'
+            st.write(f"**Regular:** {regular}")
+
+            ruim = str((df_analise_b.loc[df_analise_b['percent'] < 70, 'percent'].shape[0])/df_analise_b.shape[0] * 100) + '%'
+            st.write(f"**Ruim:** {ruim}")
+
+        with emp_c:
+            fig = go.Figure(data=[go.Histogram(x=df_empresa_c.value, histnorm='percent')])
+            fig.update_layout(barmode='stack',
+                #width=440, 
+                height=250,
+                margin=dict(b=5,	t=35,	l=0,	r=0),
+                title='Empresa C',
+                font=dict(size=15))
+
+            fig.update_traces(textposition='inside', textfont_color='rgb(255,255,255)', textfont_size=20) #marker_color='rgb(55,83,109)',
+            fig.update_yaxes(range = [0, 100])
+            emp_c.plotly_chart(fig, use_container_width=True)
+
+            df_analise_c = df_empresa_c[['employee', 'count', 'answer']].groupby(['employee']).sum()
+            df_analise_c['percent'] = (df_analise_c['answer'] / df_analise_c['count']) * 100
+            st.subheader('Avaliação dos funcionários')
+
+            otimo = str((df_analise_c.loc[df_analise_c['percent'] >= 80, 'percent'].shape[0])/df_analise_c.shape[0] * 100) + '%'
+            st.write(f"**Ótimo:** {otimo}")
+
+            regular = str((df_analise_c.loc[(df_analise_c['percent'] < 80) & (df_analise_c['percent'] >= 70), 'percent'].shape[0])/df_analise_c.shape[0] * 100) + '%'
+            st.write(f"**Regular:** {regular}")
+
+            ruim = str((df_analise_c.loc[df_analise_c['percent'] < 70, 'percent'].shape[0])/df_analise_c.shape[0] * 100) + '%'
+            st.write(f"**Ruim:** {ruim}")
 
         legenda.write('''
 **Legenda:** \n
