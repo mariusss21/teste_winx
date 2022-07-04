@@ -129,9 +129,9 @@ def dashboard(df: pd.DataFrame) -> None:
     if modo_vis == 'Empresa':
         empresa_survey = col2.selectbox('Survey', list(df.survey.unique()))
 
-        df_empresa_a = df[(df.survey == empresa_survey) & (df.survey == 'Empresa A')]
-        df_empresa_b = df[(df.survey == empresa_survey) & (df.survey == 'Empresa B')]
-        df_empresa_c = df[(df.survey == empresa_survey) & (df.survey == 'Empresa C')]
+        df_empresa_a = df[(df.survey == empresa_survey) & (df.company_id == 'Empresa A')]
+        df_empresa_b = df[(df.survey == empresa_survey) & (df.company_id == 'Empresa B')]
+        df_empresa_c = df[(df.survey == empresa_survey) & (df.company_id == 'Empresa C')]
 
         emp_a, emp_b, emp_c = st.columns(3)
 
