@@ -123,7 +123,8 @@ def data_treatement() -> pd.DataFrame:
     #                                 0: 'Não se aplica'})
     
     df['count'] = 1
-    df['answer'] = [1 if df.value in [1, 2] else 0]
+    df.loc[(df['value'] == 1) | (df['value'] == 2) ,'answer'] = 1
+    df.loc[(df['value'] != 1) & (df['value'] != 2) ,'answer'] = 0
 
     df.company_id = df['company_id'].str.replace('95dfed2b-32aa-46f1-935a-5c6356327bd6', 'Empresa A')
     df.company_id = df['company_id'].str.replace('95dfed2b-3371-42b3-8d58-b25285353bd4', 'Empresa B')
