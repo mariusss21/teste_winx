@@ -160,7 +160,7 @@ def dashboard(df: pd.DataFrame) -> None:
     modo_vis = col1.selectbox('Modo de visualização:', ['Survey', 'Empresa'])
 
     if modo_vis == 'Survey':
-        st.write('teste')
+        #st.write('teste')
         empresa_survey = col2.selectbox('Survey:', list(df.survey.unique()))
 
         df_empresa_a = df[(df.survey == empresa_survey) & (df.company_id == 'Empresa A')]
