@@ -51,7 +51,7 @@ def perguntas():
     st.title('Perguntas e respostas')
     with st.expander('1. Existe alguma falha ou oportunidade de melhoria na forma como os dados estão sendo registrados?'):
         st.markdown("""
-            * Alguns campos possuem dados faltantes impactando na análise dados e atrapalhando a utilização de modelos de machine learning (as linhas precisam ser deletadas ou preenchidas) \n
+            * Alguns campos possuem dados faltantes. Esses dados podem impactar a obtenção de insights valiosos e atrapalhar a utilização de modelos de machine learning (as linhas precisam ser deletadas ou preenchidas) \n
             * Há falta de padrão nas respostas em alguns campos como gender, home_time e age_group. Em alguns casos dá pra tratar manualmente a informação (caso do gender), nos outros o ideal é corrigir nos formulários \n
             * Há dados de tempo em que as respostas mudam de unidade (parte em meses e parte em anos)
         """)
@@ -111,6 +111,8 @@ def perguntas():
 
 
 def data_treatement():
+    df = pd.read_csv('data.csv', sep=',' )
+    st.write(df.company_id.unique())
     pass
 
 ######################################################################################################
