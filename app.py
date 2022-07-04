@@ -161,7 +161,8 @@ def dashboard(df: pd.DataFrame) -> None:
             fig.update_yaxes(range = [0, 100])
             emp_a.plotly_chart(fig, use_container_width=True)
 
-
+            df_analise_a = df_empresa_a[['employee','value', 'count', 'answer']].groupby(['employee']).sum()
+            st.write(df_analise_a)
 
         
         fig = go.Figure(data=[go.Histogram(x=df_empresa_b.value, histnorm='percent')])
