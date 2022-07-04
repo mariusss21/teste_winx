@@ -165,7 +165,7 @@ def dashboard(df: pd.DataFrame) -> None:
             df_analise_a['percent'] = (df_analise_a['answer'] / df_analise_a['count']) * 100
             st.subheader('Avaliação dos funcionários')
 
-            otimo = str((df_analise_a.loc[df_analise_a['percent'] >= 80, 'percent'].shape[0])/df_analise_a.shape[0] * 100) + '%'
+            otimo = str(round((df_analise_a.loc[df_analise_a['percent'] >= 80, 'percent'].shape[0])/df_analise_a.shape[0] * 100), 1) + '%'
             st.write(f"**Ótimo:** {otimo}")
 
             regular = str((df_analise_a.loc[(df_analise_a['percent'] < 80) & (df_analise_a['percent'] >= 70), 'percent'].shape[0])/df_analise_a.shape[0] * 100) + '%'
