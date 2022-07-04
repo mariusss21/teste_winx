@@ -40,6 +40,7 @@ div.block-container{
 div.streamlit-expanderHeader{
     width: 100%;
     font-size: 18px;
+    background-color: grey;
 }
 </style>""", unsafe_allow_html=True) #    font-weight: bold;
 
@@ -70,6 +71,7 @@ def perguntas():
             st.write(f'**Gender:** {df.gender.unique()}')
             st.write(f'**home_time:** {df.home_time.unique()}')
             st.write(f'**age_group:** {df.age_group.unique()}')
+            st.write('Aqui temos ranges de idades diferentes, unidades diferentes e formas diferentes de passar a mesma informação (M e Masculino representando a mesma informação)')
             
 
     with st.expander('2. Esses dados já proveem algum tipo de insight? Quais?'):
