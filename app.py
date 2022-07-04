@@ -161,7 +161,8 @@ def dashboard(df: pd.DataFrame) -> None:
             fig.update_yaxes(range = [0, 100])
             emp_a.plotly_chart(fig, use_container_width=True)
 
-            df_analise_a = df_empresa_a[['employee','value', 'count', 'answer']].groupby(['employee']).sum()
+            df_analise_a = df_empresa_a[['employee', 'count', 'answer']].groupby(['employee']).sum()
+            df_analise_a['percent'] = (df_analise_a['answer'] / df_analise_a['count']) * 100
             st.write(df_analise_a)
 
         
