@@ -128,7 +128,7 @@ def perguntas():
 
     with st.expander('6. Que caminho você seguiria para criar um dashboard para utilização interna e externa com estes dados? Qual ferramenta utilizaria e como faria o desenvolvimento?'):
         st.markdown("""
-            Um camminho possível é utilizando o Streamlit (framework Python, open-source, amplamente utilizado para dashboards de Machine Learning e Data Science), podendo ainda ser utilizado o Grafana (aplicação web para análise e visualização interativa). \
+            Um caminho possível é utilizando o Streamlit (framework Python, open-source, amplamente utilizado para dashboards de Machine Learning e Data Science), podendo ainda ser utilizado o Grafana (aplicação web para análise e visualização interativa). \
             Contudo, recomendaria o Streamlit pela praticidade de manutenção e escalabilidade.            \n
         """)
 
