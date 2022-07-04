@@ -58,7 +58,7 @@ def perguntas():
         with col1:
             st.write('Dados faltantes por colunas:')
             df_null = pd.DataFrame()
-            df_null['Quantidade'] = df.isnull().sum()
+            df_null['Quantidade'] = df.isnull().sum().astype(int)
             df_null.dropna(axis=1, inplace=True)
             df_null = df_null[df_null > 0]
             df_null['Percentual'] = 0
