@@ -265,10 +265,10 @@ def introducao():
     st.write('Este pequeno projeto foi desenvolvido para um teste técnico e tem como objetivo extrair insights dos dados fornecidos e responder questões relevantes para a vaga em questão.')
     st.subheader('Como funciona?')
     st.markdown("""
-    O projeto foi dividido em duas partes: \n
-    * Dashboard: Onde é possível visualizar os dados fornecidos e extrair alguns insights. Há muitas opções de análise a serem exploradas e eu escolhi o caminho de avaliar como estão as avaliações das 
+O projeto foi dividido em duas partes: \n
+* Dashboard: Onde é possível visualizar os dados fornecidos e extrair alguns insights. Há muitas opções de análise a serem exploradas e eu escolhi o caminho de avaliar como estão as avaliações das 
 empresas considerando os temas dos questionários. Então coloquei filros para os temas e plo histogramas para comparar as empresas e logo abaixo como elas estão pontuando (ótimo, regular ou péssimo) em relação aos temas. \n
-    * Perguntas: São respondidas as perguntas enviadas pela empresa.
+* Perguntas: São respondidas as perguntas enviadas pela empresa.
     """)
 
 ######################################################################################################
