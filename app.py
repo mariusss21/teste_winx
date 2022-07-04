@@ -62,7 +62,7 @@ def perguntas():
             df_null = df_null[df_null['Quantidade'] > 0]
             df_null['Percentual'] = (df_null['Quantidade'] / df.shape[0]) * 100
             df_null['Percentual'] = df_null['Percentual'].astype(int)
-            st.write(df_null)
+            st.dataframe(df_null, width=None)
 
     with st.expander('2. Esses dados já proveem algum tipo de insight? Quais?'):
         st.markdown("""
