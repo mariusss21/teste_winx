@@ -114,7 +114,6 @@ def perguntas():
 
 def data_treatement() -> pd.DataFrame:
     df = pd.read_csv('data.csv', sep=',' )
-    st.write(df.company_id.unique())
 
     df['answer'] = df['value'].map({1: 'Concordo totalmente',
                                     2: 'Concordo parcialmente',
