@@ -168,10 +168,10 @@ def dashboard(df: pd.DataFrame) -> None:
             otimo = str(round(((df_analise_a.loc[df_analise_a['percent'] >= 80, 'percent'].shape[0])/df_analise_a.shape[0] * 100), 1)) + '%'
             st.write(f"**Ótimo:** {otimo}")
 
-            regular = str((df_analise_a.loc[(df_analise_a['percent'] < 80) & (df_analise_a['percent'] >= 70), 'percent'].shape[0])/df_analise_a.shape[0] * 100) + '%'
+            regular = str(round(((df_analise_a.loc[(df_analise_a['percent'] < 80) & (df_analise_a['percent'] >= 70), 'percent'].shape[0])/df_analise_a.shape[0] * 100), 1)) + '%'
             st.write(f"**Regular:** {regular}")
 
-            ruim = str((df_analise_a.loc[df_analise_a['percent'] < 70, 'percent'].shape[0])/df_analise_a.shape[0] * 100) + '%'
+            ruim = str(round(((df_analise_a.loc[df_analise_a['percent'] < 70, 'percent'].shape[0])/df_analise_a.shape[0] * 100), 1)) + '%'
             st.write(f"**Ruim:** {ruim}")
 
         with emp_b:
@@ -191,13 +191,13 @@ def dashboard(df: pd.DataFrame) -> None:
             df_analise_b['percent'] = (df_analise_b['answer'] / df_analise_b['count']) * 100
             st.subheader('Avaliação dos funcionários')
 
-            otimo = str((df_analise_b.loc[df_analise_b['percent'] >= 80, 'percent'].shape[0])/df_analise_b.shape[0] * 100) + '%'
+            otimo = str(round(((df_analise_b.loc[df_analise_b['percent'] >= 80, 'percent'].shape[0])/df_analise_b.shape[0] * 100), 1)) + '%'
             st.write(f"**Ótimo:** {otimo}")
 
-            regular = str((df_analise_b.loc[(df_analise_b['percent'] < 80) & (df_analise_b['percent'] >= 70), 'percent'].shape[0])/df_analise_b.shape[0] * 100) + '%'
+            regular = str(round(((df_analise_b.loc[(df_analise_b['percent'] < 80) & (df_analise_b['percent'] >= 70), 'percent'].shape[0])/df_analise_b.shape[0] * 100), 1)) + '%'
             st.write(f"**Regular:** {regular}")
 
-            ruim = str((df_analise_b.loc[df_analise_b['percent'] < 70, 'percent'].shape[0])/df_analise_b.shape[0] * 100) + '%'
+            ruim = str(round(((df_analise_b.loc[df_analise_b['percent'] < 70, 'percent'].shape[0])/df_analise_b.shape[0] * 100), 1)) + '%'
             st.write(f"**Ruim:** {ruim}")
 
         with emp_c:
@@ -217,13 +217,13 @@ def dashboard(df: pd.DataFrame) -> None:
             df_analise_c['percent'] = (df_analise_c['answer'] / df_analise_c['count']) * 100
             st.subheader('Avaliação dos funcionários')
 
-            otimo = str((df_analise_c.loc[df_analise_c['percent'] >= 80, 'percent'].shape[0])/df_analise_c.shape[0] * 100) + '%'
+            otimo = str(round(((df_analise_c.loc[df_analise_c['percent'] >= 80, 'percent'].shape[0])/df_analise_c.shape[0] * 100), 1)) + '%'
             st.write(f"**Ótimo:** {otimo}")
 
-            regular = str((df_analise_c.loc[(df_analise_c['percent'] < 80) & (df_analise_c['percent'] >= 70), 'percent'].shape[0])/df_analise_c.shape[0] * 100) + '%'
+            regular = str(round(((df_analise_c.loc[(df_analise_c['percent'] < 80) & (df_analise_c['percent'] >= 70), 'percent'].shape[0])/df_analise_c.shape[0] * 100), 1)) + '%'
             st.write(f"**Regular:** {regular}")
 
-            ruim = str((df_analise_c.loc[df_analise_c['percent'] < 70, 'percent'].shape[0])/df_analise_c.shape[0] * 100) + '%'
+            ruim = str(round(((df_analise_c.loc[df_analise_c['percent'] < 70, 'percent'].shape[0])/df_analise_c.shape[0] * 100), 1)) + '%'
             st.write(f"**Ruim:** {ruim}")
 
         legenda.write('''
