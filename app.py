@@ -165,7 +165,7 @@ def dashboard(df: pd.DataFrame) -> None:
             df_analise_a['percent'] = (df_analise_a['answer'] / df_analise_a['count']) * 100
             st.write(df_analise_a)
 
-            st.write(f'**Ótimo:** {str(df_analise_a.loc[df_analise_a['percent'] > 80, 'percent'].shape[0])}')
+            st.write(f"**Ótimo:** {str(df_analise_a.loc[df_analise_a['percent'] > 80, 'percent'].shape[0])}")
 
         
         fig = go.Figure(data=[go.Histogram(x=df_empresa_b.value, histnorm='percent')])
