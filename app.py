@@ -154,7 +154,7 @@ def dashboard(df: pd.DataFrame) -> None:
             font=dict(size=15))
 
         fig.update_traces(textposition='inside', textfont_color='rgb(255,255,255)', textfont_size=20) #marker_color='rgb(55,83,109)',
-        fig.update_yaxes(range = [0, 1])
+        fig.update_yaxes(range = [0, 100])
         emp_a.write(fig)
 
         fig = ff.create_distplot([df_empresa_a.value], ['A'], bin_size=[1])
