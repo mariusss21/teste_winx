@@ -60,7 +60,7 @@ def perguntas():
             df_null = pd.DataFrame()
             df_null['Quantidade'] = df.isnull().sum()
             df_null = df_null[df_null['Quantidade'] > 0]
-            df_null['Percentual'] = (df_null['Quantidade'] / df.shape[1]) * 100
+            df_null['Percentual'] = (df_null['Quantidade'] / df.shape[0]) * 100
             st.write(df_null)
 
     with st.expander('2. Esses dados já proveem algum tipo de insight? Quais?'):
