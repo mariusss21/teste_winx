@@ -80,7 +80,7 @@ def perguntas():
         st.markdown("""
             Ao selecionar a opção dashboard, o usuário pode visualizar gráficos e informações que são relevantes para a empresa. \n
             **Gráficos:** \n
-            * Do tipo histograma onde podemos ver a distribuição das respostas dos colaboradores para as questões levantadas divididas por pesquisa. Pelos critérios fornecidos,
+            * São do tipo histograma onde podemos ver a distribuição das respostas dos colaboradores para as questões levantadas divididas por pesquisa. Pelos critérios fornecidos,
             as empresas com melhor desempenho devem ter as respostas situadas nos valores 1 e 2 (mais a esquerda). \n
             **Resultado:** \n
             * Ótimo: 80% ou mais de respostas “concordo totalmente” e "concordo parcialmente". \n
@@ -91,14 +91,19 @@ def perguntas():
             * Journey: Todas as empresas tiveram 50% ou mais de avaliações como péssimo \n
             * Culture: As empresas A e C foram avaliadas por mais de 60% dos funcionários ótimo, já a empresa B possui 72,2% de avaliações como péssimo \n
             * Attrition: A empresa A se destaca nesse ponto com 87,5% das avaliações como ótimo, a empresa C possui 47,1% e o destaque negativo fica por conta da empresa B onde mais de 60% avaliou como péssimo. \n
-
+            **Considerações:** \n
             Essas informações vem de uma pequena amostra da base de dados e pode não refletir o comportamento geral das empresas. \n
-            Os dados foram filtrados por empresa e por pesquisa, mas pode ser extendido para o gênero, cargo, líder, etc. São vários campos que podem ser filtrados e agrupados para gerar ainda mais insights. \n
+            Os dados foram filtrados por empresa e por tipo de pesquisa, mas pode ser extendido para o gênero, cargo, líder, etc. São vários campos que podem ser filtrados e agrupados para gerar ainda mais insights. \n
         """)
 
     with st.expander('3. No curto prazo, queremos criar uma associação das estatísticas de algumas das respostas com recomendações práticas do que fazer para empresa. O quão difícil seria fazer isso? Qual seria o caminho?'):
         st.markdown("""
-            
+            Enxergo como possibilidade o seguinte caminho: \n
+            * Coletar mais dados (quantidade e qualidade são importantes) \n
+            * Identificar padrões nas respostas, monitorar as avaliações dos colaboradores no tempo, se elas tem melhorado ou não e capturar as red flags (exemplo: avaliações muito ruins) \n
+            * Identificando esses casos, teremos que tomar ações coerentes com a regra de negócio da companhia (ter alguma reunião com o colaborador) e traçar ações \n
+            * Gerar dados sobre essas ações e os resultados obtidos \n
+            * Com esses dados dos resultados começar a gerar sugestões de ações para a empresa \n
         """)
 
     with st.expander('4. Qual a estrutura ideal de banco de dados mais adequada para esse tipo de pesquisa e que permita, no futuro, aplicação de AI?'):
