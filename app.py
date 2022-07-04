@@ -54,7 +54,7 @@ def perguntas():
             * Há falta de padrão nas respostas em alguns campos como gender, home_time e age_group. Em alguns casos dá pra tratar manualmente a informação (caso do gender), nos outros o ideal é corrigir nos formulários \n
             * Há dados de tempo em que as respostas mudam de unidade (parte em meses e parte em anos)
         """)
-        col1, col2 = st.columns(2)
+        col1, col2 = st.columns([2,8])
 
         with col1:
             st.write('**Dados faltantes por colunas (em %):**')
@@ -63,7 +63,7 @@ def perguntas():
             df_null = df_null[df_null['Quantidade'] > 0]
             df_null['%'] = (df_null['Quantidade'] / df.shape[0]) * 100
             df_null['%'] = df_null['%'].astype(int)
-            st.bar_chart(data=df_null['%'])
+            st.dataframe(df_null)
 
         with col2:
             st.write('**Falta de padrão nas respostas:**')
