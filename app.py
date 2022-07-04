@@ -115,12 +115,15 @@ def perguntas():
 def data_treatement() -> pd.DataFrame:
     df = pd.read_csv('data.csv', sep=',' )
 
-    df['answer'] = df['value'].map({1: 'Concordo totalmente',
-                                    2: 'Concordo parcialmente',
-                                    3: 'Não concordo nem discordo',
-                                    4: 'Discordo parcialmente',
-                                    5: 'Discordo totalmente',
-                                    0: 'Não se aplica'})
+    # df['answer'] = df['value'].map({1: 'Concordo totalmente',
+    #                                 2: 'Concordo parcialmente',
+    #                                 3: 'Não concordo nem discordo',
+    #                                 4: 'Discordo parcialmente',
+    #                                 5: 'Discordo totalmente',
+    #                                 0: 'Não se aplica'})
+    
+    df['count'] = 1
+    df['answer'] = [1 if df.value in [1, 2] else 0]
 
     df.company_id = df['company_id'].str.replace('95dfed2b-32aa-46f1-935a-5c6356327bd6', 'Empresa A')
     df.company_id = df['company_id'].str.replace('95dfed2b-3371-42b3-8d58-b25285353bd4', 'Empresa B')
@@ -144,19 +147,22 @@ def dashboard(df: pd.DataFrame) -> None:
 
         emp_a, emp_b, emp_c, legenda = st.columns(4)
 
-        fig = go.Figure(data=[go.Histogram(x=df_empresa_a.value, histnorm='percent')])
-        fig.update_layout(barmode='stack',
-            #width=440, 
-            height=250,
-            margin=dict(b=5,	t=35,	l=0,	r=0),
-            title='Empresa A',
-            font=dict(size=15))
+        with emp_a:
+            fig = go.Figure(data=[go.Histogram(x=df_empresa_a.value, histnorm='percent')])
+            fig.update_layout(barmode='stack',
+                #width=440, 
+                height=250,
+                margin=dict(b=5,	t=35,	l=0,	r=0),
+                title='Empresa A',
+                font=dict(size=15))
 
-        fig.update_traces(textposition='inside', textfont_color='rgb(255,255,255)', textfont_size=20) #marker_color='rgb(55,83,109)',
-        fig.update_yaxes(range = [0, 100])
-        emp_a.plotly_chart(fig, use_container_width=True)
-            # emp_a.write(fig)
+            fig.update_traces(textposition='inside', textfont_color='rgb(255,255,255)', textfont_size=20) #marker_color='rgb(55,83,109)',
+            fig.update_yaxes(range = [0, 100])
+            emp_a.plotly_chart(fig, use_container_width=True)
 
+
+
+        
         fig = go.Figure(data=[go.Histogram(x=df_empresa_b.value, histnorm='percent')])
         fig.update_layout(barmode='stack',
             #width=440, 
