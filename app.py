@@ -98,10 +98,11 @@ def perguntas():
 
     with st.expander('3. No curto prazo, queremos criar uma associação das estatísticas de algumas das respostas com recomendações práticas do que fazer para empresa. O quão difícil seria fazer isso? Qual seria o caminho?'):
         st.markdown("""
-            Enxergo como possibilidade o seguinte caminho: \n
+            Enxergo como uma possibilidade o seguinte caminho: \n
             * Coletar mais dados (quantidade e qualidade são importantes) \n
             * Identificar padrões nas respostas, monitorar as avaliações dos colaboradores no tempo, se elas tem melhorado ou não e capturar as red flags (exemplo: avaliações muito ruins) \n
-            * Identificando esses casos, teremos que tomar ações coerentes com a regra de negócio da companhia (exemplo: ter alguma reunião com o colaborador ou com o líder) e traçar ações para tratar a questão \n
+            * Identificando esses casos, teremos que tomar ações coerentes com a regra de negócio da companhia (exemplo: ter alguma reunião com o colaborador ou com o líder) e traçar ações para tratar a questão
+            Por exemplo, profissional pontuou muito baixo no tema "Risco de perda de talentos", são várias as possíveis causas para essa pontuação (o líder, salário, carga horária...)  \n
             * Gerar dados sobre essas ações e os resultados obtidos \n
             * Com esses dados dos resultados começar a gerar sugestões de ações para a empresa \n
         """)
@@ -256,16 +257,31 @@ def dashboard(df: pd.DataFrame) -> None:
 0: 'Não se aplica'\n''')
 
 
+def introducao():
+    st.subheader('Apresentação')
+    st.write('Me chamo Mario Carvalho e sou um apaixonado por tecnologia e dados. Comecei minha trajetória no mercado de trabalho como engenheiro de controle e automação e desde 2020 utilizo Python e dados para gerar valor.\n')
+    st.subheader('Objetivo')
+    st.write('Este pequeno projeto foi desenvolvido para um teste técnico e tem como objetivo extrair insights dos dados fornecidos e responder questões relevantes para a vaga em questão.')
+    st.subheader('Como funciona?')
+    st.markdown("""
+    O projeto foi dividido em duas partes: \n
+    * Dashboard: Onde é possível visualizar os dados fornecidos e extrair alguns insights. Há muitas opções de análise a serem exploradas e eu escolhi o caminho de avaliar como estão as avaliações das 
+    empresas considerando os temas dos questionários. Então coloquei filros para os temas e plo histogramas para comparar as empresas e logo abaixo como elas estão pontuando (ótimo, regular ou péssimo) em relação aos temas. \n
+    * Perguntas: São respondidas as perguntas enviadas pela empresa.
+    """)
 
 ######################################################################################################
 # sidebar
 ######################################################################################################
 
-telas = ['Dashboard', 'Perguntas']
+telas = ['Introdução', 'Dashboard', 'Perguntas']
 c1,c2 = st.sidebar.columns([1,1])
-tela_selecionada = st.sidebar.radio('Selecione uma opção', telas)
+tela_selecionada = st.sidebar.radio('Menu', telas)
 
 if __name__ == '__main__':
+    if tela_selecionada == 'Introdução':
+        introducao()
+
     if tela_selecionada == 'Perguntas':
         perguntas()
 
