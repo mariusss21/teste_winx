@@ -56,7 +56,7 @@ def perguntas():
         col1, col2, col3 = st.columns(3)
 
         with col1:
-            st.write('Dados faltantes por colunas:')
+            st.write('**Dados faltantes por colunas:**')
             df_null = pd.DataFrame()
             df_null['Quantidade'] = df.isnull().sum()
             df_null = df_null[df_null['Quantidade'] > 0]
@@ -65,8 +65,11 @@ def perguntas():
             st.dataframe(df_null)
 
         with col2:
-            st.write('Falta de padrão nas respostas:')
-            st.write(f'Gender: {df.gender.unique()}')
+            st.write('**Falta de padrão nas respostas:**')
+            st.write(f'**Gender:** {df.gender.unique()}')
+            st.write(f'**home_time:** {df.home_time.unique()}')
+            st.write(f'**age_group:** {df.age_group.unique()}')
+            
 
     with st.expander('2. Esses dados já proveem algum tipo de insight? Quais?'):
         st.markdown("""
