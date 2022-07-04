@@ -80,10 +80,10 @@ def perguntas():
         st.markdown("""
             Ao selecionar a opção dashboard, o usuário pode visualizar gráficos e informações que são relevantes para a empresa. \n
             * Gráficos: Do tipo histograma onde podemos ver a distribuição das respostas dos colaboradores para as questões levantadas divididas por pesquisa\n
-            * Resultado: 
-            ** Ótimo: 80% ou mais de respostas “concordo totalmente” e "concordo parcialmente". 
-            ** Regular: entre 70% e 79% de respostas “concordo totalmente” "concordo parcialmente".
-            ** Péssimo: 69% ou menos de respostas “concordo totalmente" e "concordo parcialmente".
+            * Resultado: \n
+            ** Ótimo: 80% ou mais de respostas “concordo totalmente” e "concordo parcialmente". \n
+            ** Regular: entre 70% e 79% de respostas “concordo totalmente” "concordo parcialmente". \n
+            ** Péssimo: 69% ou menos de respostas “concordo totalmente" e "concordo parcialmente". \n
         """)
 
     with st.expander('3. No curto prazo, queremos criar uma associação das estatísticas de algumas das respostas com recomendações práticas do que fazer para empresa. O quão difícil seria fazer isso? Qual seria o caminho?'):
