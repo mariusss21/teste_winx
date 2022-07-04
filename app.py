@@ -144,13 +144,13 @@ def dashboard(df: pd.DataFrame) -> None:
 
         emp_a, emp_b, emp_c, legenda = st.columns(4)
 
-        fig = ff.create_distplot([df_empresa_a.value], bin_size=[1])
+        fig = ff.create_distplot([df_empresa_a.value], ['A'], bin_size=[1])
         emp_a.plotly_chart(fig, use_container_width=True)
 
-        fig = ff.create_distplot([df_empresa_b.value], ['Empresa B'], bin_size=[1])
+        fig = ff.create_distplot([df_empresa_b.value], ['B'], bin_size=[1])
         emp_b.plotly_chart(fig, use_container_width=True)
 
-        fig = ff.create_distplot([df_empresa_c.value], ['Empresa C'], bin_size=[1])
+        fig = ff.create_distplot([df_empresa_c.value], ['C'], bin_size=[1])
         emp_c.plotly_chart(fig, use_container_width=True)
         
         # emp_a.write(df_empresa_a)
