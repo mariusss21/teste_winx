@@ -144,7 +144,7 @@ def dashboard(df: pd.DataFrame) -> None:
 
         emp_a, emp_b, emp_c = st.columns(3)
 
-        fig = ff.create_distplot([df_empresa_a.value], ['Empresa A'], bin_size=[1])
+        fig = ff.create_distplot([df_empresa_a.answer], ['Empresa A'], bin_size=[1])
         emp_a.plotly_chart(fig, use_container_width=True)
         emp_a.write(df_empresa_a)
 
