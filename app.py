@@ -46,8 +46,6 @@ div.streamlit-expanderHeader{
 
 def perguntas():
     df = pd.read_csv('data.csv', sep=',' )
-    df['home_time'] = df['home_time'].str.replace('é', 'e')
-    df['age_group'] = df['age_group'].str.replace('é', 'e')
 
     st.title('Perguntas e respostas')
     with st.expander('1. Existe alguma falha ou oportunidade de melhoria na forma como os dados estão sendo registrados?'):
@@ -65,6 +63,8 @@ def perguntas():
             df_null = df_null[df_null['Quantidade'] > 0]
             df_null['%'] = (df_null['Quantidade'] / df.shape[0]) * 100
             df_null['%'] = df_null['%'].astype(int)
+
+            st.plotly_chart(df_null.iplot(kind='bar', asFigure=True, title='Dados faltantes por colunas'))
             st.dataframe(df_null)
 
         with col2:
