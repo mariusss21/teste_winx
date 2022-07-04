@@ -64,7 +64,7 @@ def perguntas():
             df_null['%'] = (df_null['Quantidade'] / df.shape[0]) * 100
             df_null['%'] = df_null['%'].astype(int)
 
-            st.plotly_chart(df_null.iplot(kind='bar', asFigure=True, title='Dados faltantes por colunas'))
+            st.bar_chart(data=df_null['%'])
             st.dataframe(df_null)
 
         with col2:
