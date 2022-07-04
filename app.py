@@ -181,6 +181,13 @@ def dashboard(df: pd.DataFrame) -> None:
         fig.update_yaxes(range = [0, 100])
         emp_c.write(fig)
 
+        legenda.write('''1: 'Concordo totalmente' \n
+                                    2: 'Concordo parcialmente'\n
+                                    3: 'Não concordo nem discordo'\n
+                                    4: 'Discordo parcialmente'\n
+                                    5: 'Discordo totalmente'\n
+                                    0: 'Não se aplica'\n''')
+
         # fig = ff.create_distplot([df_empresa_a.value], ['A'], bin_size=[1])
         # emp_a.plotly_chart(fig, use_container_width=True)
 
