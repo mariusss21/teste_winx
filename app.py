@@ -157,7 +157,7 @@ def dashboard(df: pd.DataFrame) -> None:
     st.title('Dashboard')
     col1, col2, col3, col4 = st.columns(4)
 
-    modo_vis = col1.selectbox('Modo de visualização:', ['Survey', 'Empresa'])
+    modo_vis = col1.selectbox('Modo de visualização:', ['Survey'])
 
     if modo_vis == 'Survey':
         #st.write('teste')
