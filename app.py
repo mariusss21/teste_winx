@@ -53,7 +53,7 @@ def perguntas():
     st.title('Perguntas e respostas')
     with st.expander('1. Existe alguma falha ou oportunidade de melhoria na forma como os dados estão sendo registrados?'):
         st.markdown("""
-            * Alguns campos possuem dados faltantes. Esses dados podem impactar a obtenção de insights valiosos e atrapalhar a utilização de modelos de machine learning (as linhas precisam ser deletadas ou preenchidas) \n
+            * Alguns campos possuem dados faltantes. Esses dados podem impactar a obtenção de insights valiosos e dificultar a utilização de modelos de machine learning (as linhas precisam ser deletadas ou preenchidas) \n
             * Há falta de padrão nas respostas em alguns campos como gender, home_time e age_group. Em alguns casos dá pra tratar manualmente a informação (caso do gender), nos outros o ideal é corrigir nos formulários \n
             * Há dados de tempo em que as respostas mudam de unidade (parte em meses e parte em anos)
         """)
@@ -80,8 +80,8 @@ def perguntas():
         st.markdown("""
             Ao selecionar a opção dashboard, o usuário pode visualizar gráficos e informações que são relevantes para a empresa. \n
             **Gráficos:** \n
-            * São do tipo histograma onde podemos ver a distribuição das respostas dos colaboradores para as questões levantadas divididas por pesquisa. Pelos critérios fornecidos,
-            as empresas com melhor desempenho devem ter as respostas situadas nos valores 1 e 2 (mais a esquerda). \n
+            * São do tipo histograma onde podemos ver a distribuição das respostas dos colaboradores para as questões levantadas divididas por pesquisa. Pelos critérios fornecidos, \
+            as empresas com melhor desempenho devem ter uma avaliação nos valores 1 e 2 (mais a esquerda). \n
             **Resultado:** \n
             * Ótimo: 80% ou mais de respostas “concordo totalmente” e "concordo parcialmente". \n
             * Regular: entre 70% e 79% de respostas “concordo totalmente” "concordo parcialmente". \n
@@ -98,7 +98,7 @@ def perguntas():
 
     with st.expander('3. No curto prazo, queremos criar uma associação das estatísticas de algumas das respostas com recomendações práticas do que fazer para empresa. O quão difícil seria fazer isso? Qual seria o caminho?'):
         st.markdown("""
-            Enxergo como uma possibilidade o seguinte caminho: \n
+            Uma possibilidade é o seguinte caminho: \n
             * Coletar mais dados (quantidade e qualidade são importantes) \n
             * Identificar padrões nas respostas, monitorar as avaliações dos colaboradores no tempo, se elas tem melhorado ou não e capturar as red flags (exemplo: avaliações muito ruins) \n
             * Identificando esses casos, teremos que tomar ações coerentes com a regra de negócio da companhia (exemplo: ter alguma reunião com o colaborador ou com o líder) e traçar ações para tratar a questão
@@ -120,7 +120,7 @@ def perguntas():
     with st.expander('5. Quais as aplicações mais adequadas que devemos utilizar nesse estágio para evitar retrabalho no futuro?'):
         st.markdown("""
             Há diversas ferramentas que podem ser utilizadas e a definição delas depende bastante do contexto do que queremos entregar. Questões como onde iremos hospedar as aplicações (cloud ou on-premise) e o custo impactam diretamente nessa decisão.\n
-            Apesar dessas icógnitas, há alguns pontos que podem ser considerados previamente, por exemplo utilizar Python como liguagem de programação por possuir vasta gama de bibliotecas voltadas para dados. Pode-se também se utlizar o Airflow para
+            Apesar dessas incógnitas, há alguns pontos que podem ser considerados previamente, por exemplo utilizar Python como liguagem de programação por possuir vasta gama de bibliotecas voltadas para dados. Pode-se também se utlizar o Airflow para
             orquestar as aplicações, tendo em vista que pode rodar local ou na nuvem. Essa combinação de ferramentas já nos permite resolver uma grande gama de problemas relacionados a dados como a coleta, tratamento, análise estatística e 
             aplicação de modelos de machine learning.
         """)
@@ -267,7 +267,7 @@ def introducao():
     st.markdown("""
 O projeto foi dividido em duas partes: \n
 * Dashboard: Onde é possível visualizar os dados fornecidos e extrair alguns insights. Há muitas opções de análise a serem exploradas e eu escolhi o caminho de observar como estão as avaliações das \
-empresas considerando os temas dos questionários. Então coloquei filros para os temas e plo histogramas para comparar as empresas e logo abaixo como elas estão pontuando (ótimo, regular ou péssimo) em relação aos temas. \n
+empresas considerando os temas dos questionários. Então coloquei filtros para os temas e plotei histogramas para comparar as empresas e logo abaixo como elas estão pontuando (ótimo, regular ou péssimo) em relação aos temas. \n
 * Perguntas: São respondidas as perguntas enviadas pela empresa.
     """)
 
