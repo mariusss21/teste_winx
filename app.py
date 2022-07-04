@@ -80,11 +80,20 @@ def perguntas():
         st.markdown("""
             Ao selecionar a opção dashboard, o usuário pode visualizar gráficos e informações que são relevantes para a empresa. \n
             **Gráficos:** \n
-            * Do tipo histograma onde podemos ver a distribuição das respostas dos colaboradores para as questões levantadas divididas por pesquisa\n
+            * Do tipo histograma onde podemos ver a distribuição das respostas dos colaboradores para as questões levantadas divididas por pesquisa. Pelos critérios fornecidos,
+            as empresas com melhor desempenho devem ter as respostas situadas nos valores 1 e 2 (mais a esquerda). \n
             **Resultado:** \n
             * Ótimo: 80% ou mais de respostas “concordo totalmente” e "concordo parcialmente". \n
             * Regular: entre 70% e 79% de respostas “concordo totalmente” "concordo parcialmente". \n
             * Péssimo: 69% ou menos de respostas “concordo totalmente" e "concordo parcialmente". \n
+            **Análises:** \n
+            * Engagement: As empresas A e C possuem maior engajamento (acima de 60% classificados como ótimo), já a empresa B possui 57% de avaliações como péssimo \n
+            * Journey: Todas as empresas tiveram 50% ou mais de avaliações como péssimo \n
+            * Culture: As empresas A e C foram avaliadas por mais de 60% dos funcionários ótimo, já a empresa B possui 72,2% de avaliações como péssimo \n
+            * Attrition: A empresa A se destaca nesse ponto com 87,5% das avaliações como ótimo, a empresa C possui 47,1% e o destaque negativo fica por conta da empresa B onde mais de 60% avaliou como péssimo. \n
+
+            Essas informações vem de uma pequena amostra da base de dados e pode não refletir o comportamento geral das empresas. \n
+            Os dados foram filtrados por empresa e por pesquisa, mas pode ser extendido para o gênero, cargo, líder, etc. São vários campos que podem ser filtrados e agrupados para gerar ainda mais insights. \n
         """)
 
     with st.expander('3. No curto prazo, queremos criar uma associação das estatísticas de algumas das respostas com recomendações práticas do que fazer para empresa. O quão difícil seria fazer isso? Qual seria o caminho?'):
