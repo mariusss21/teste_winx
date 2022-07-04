@@ -39,8 +39,8 @@ div.block-container{
 
 div.streamlit-expanderHeader{
     width: 100%;
-    font-size: 18px;
-    background-color: grey;
+    font-size: 22px;
+    background-color: azure;
 }
 </style>""", unsafe_allow_html=True) #    font-weight: bold;
 
