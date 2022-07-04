@@ -45,7 +45,7 @@ div.streamlit-expanderHeader{
 
 
 def perguntas():
-    df = pd.read_csv('data.csv', sep=',', encoding='latin1', )
+    df = pd.read_csv('data.csv', sep=',' )
     df['home_time'] = df['home_time'].str.replace('é', 'e')
     df['age_group'] = df['age_group'].str.replace('é', 'e')
 
