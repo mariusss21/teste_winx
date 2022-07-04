@@ -155,7 +155,7 @@ def dashboard(df: pd.DataFrame) -> None:
 
             fig.update_traces(textposition='inside', textfont_color='rgb(255,255,255)', textfont_size=20) #marker_color='rgb(55,83,109)',
             fig.update_yaxes(range = [0, 100])
-            st.plotly_chart(fig, use_container_width=True)
+            emp_a.plotly_chart(fig, use_container_width=True)
             # emp_a.write(fig)
 
         fig = go.Figure(data=[go.Histogram(x=df_empresa_b.value, histnorm='percent')])
