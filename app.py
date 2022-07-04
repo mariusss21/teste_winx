@@ -163,7 +163,7 @@ def dashboard(df: pd.DataFrame) -> None:
 
             df_analise_a = df_empresa_a[['employee', 'count', 'answer']].groupby(['employee']).sum()
             df_analise_a['percent'] = (df_analise_a['answer'] / df_analise_a['count']) * 100
-            st.subheader('Avalição dos funcionários no questionário')
+            st.subheader('Avaliação dos funcionários')
 
             otimo = str((df_analise_a.loc[df_analise_a['percent'] >= 80, 'percent'].shape[0])/df_analise_a.shape[0] * 100) + '%'
             st.write(f"**Ótimo:** {otimo}")
