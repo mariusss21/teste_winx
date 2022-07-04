@@ -258,6 +258,7 @@ def dashboard(df: pd.DataFrame) -> None:
 
 
 def introducao():
+    st.title('Introdução')
     st.subheader('Apresentação')
     st.write('Me chamo Mario Carvalho e sou um apaixonado por tecnologia e dados. Comecei minha trajetória no mercado de trabalho como engenheiro de controle e automação e desde 2020 utilizo Python e dados para gerar valor.\n')
     st.subheader('Objetivo')
