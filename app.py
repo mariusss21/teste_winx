@@ -136,8 +136,8 @@ def dashboard(df: pd.DataFrame) -> None:
         emp_a, emp_b, emp_c = st.columns(3)
 
         emp_a.write(df_empresa_a)
-        emp_a.write(df_empresa_b)
-        emp_a.write(df_empresa_c)
+        emp_b.write(df_empresa_b)
+        emp_c.write(df_empresa_c)
 
 
 
