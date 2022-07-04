@@ -182,7 +182,7 @@ def dashboard(df: pd.DataFrame) -> None:
         emp_c.write(fig)
 
         legenda.write('''
-**Legenda:**
+**Legenda:** \n
 1: 'Concordo totalmente' \n
 2: 'Concordo parcialmente'\n
 3: 'Não concordo nem discordo'\n
