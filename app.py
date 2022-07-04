@@ -43,9 +43,6 @@ div.streamlit-expanderHeader{
 }
 </style>""", unsafe_allow_html=True) #    font-weight: bold;
 
-# Ajustando fuso
-tz = pytz.timezone('America/Bahia')
-
 ######################################################################################################
 # sidebar
 ######################################################################################################
