@@ -13,7 +13,7 @@ import scipy
 st.set_page_config(
     page_title="Alarmes Control Tower",
 	layout="wide",
-    initial_sidebar_state="collapsed",
+    initial_sidebar_state="expanded",
 )
 
 m = st.markdown("""
