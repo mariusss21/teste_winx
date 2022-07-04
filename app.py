@@ -101,7 +101,7 @@ def perguntas():
             Uma possibilidade é o seguinte caminho: \n
             * Coletar mais dados (quantidade e qualidade são importantes) \n
             * Identificar padrões nas respostas, monitorar as avaliações dos colaboradores no tempo, se elas tem melhorado ou não e capturar as red flags (exemplo: avaliações muito ruins) \n
-            * Identificando esses casos, teremos que tomar ações coerentes com a regra de negócio da companhia (exemplo: ter alguma reunião com o colaborador ou com o líder) e traçar ações para tratar a questão
+            * Após identificar esses casos, tem-se que tomar ações coerentes com a regra de negócio da companhia (exemplo: ter alguma reunião com o colaborador ou com o líder) e traçar ações para tratar a questão
             Por exemplo, profissional pontuou muito baixo no tema "Risco de perda de talentos", são várias as possíveis causas para essa pontuação (o líder, salário, carga horária...)  \n
             * Gerar dados sobre essas ações e os resultados obtidos \n
             * Com esses dados dos resultados começar a gerar sugestões de ações para a empresa \n
@@ -113,23 +113,23 @@ def perguntas():
             * Quem vai consumir esses dados? \n
             * Qual será a finalidade desses dados? \n
             \n
-            Deixando um pouco essas lacunas de lado, podemos utilizar bancos de dados relacionais como PostgreSQL, MySQL entre outros. Neles podemos criar diversas tabelas de dados, inclusive separando por estágios, 
-            como dados brutos (no formato que são coletados), dados processados (remoção de dados faltantes, tratamento de variáveis catgóricas) e dados analíticos (dados já formatados para uma dashboard).
+            Deixando um pouco essas lacunas de lado, pode-se utilizar bancos de dados relacionais como PostgreSQL, MySQL, entre outros. Neles podem ser criadas diversas tabelas e entidades de dados, inclusive separando por estágios, 
+            como dados brutos (no formato que são coletados), dados pré-processados (remoção de dados faltantes, tratamento de variáveis categóricas) e dados prontos (dados já formatados para uma dashboard).
         """)
 
     with st.expander('5. Quais as aplicações mais adequadas que devemos utilizar nesse estágio para evitar retrabalho no futuro?'):
         st.markdown("""
             Há diversas ferramentas que podem ser utilizadas e a definição delas depende bastante do contexto do que queremos entregar. Questões como onde iremos hospedar as aplicações (cloud ou on-premise) e o custo impactam diretamente nessa decisão.\n
-            Apesar dessas incógnitas, há alguns pontos que podem ser considerados previamente, por exemplo utilizar Python como liguagem de programação por possuir vasta gama de bibliotecas voltadas para dados. Pode-se também se utlizar o Airflow para
-            orquestar as aplicações, tendo em vista que pode rodar local ou na nuvem. Essa combinação de ferramentas já nos permite resolver uma grande gama de problemas relacionados a dados como a coleta, tratamento, análise estatística e 
+            Apesar dessas incógnitas, há alguns pontos que podem ser considerados previamente, por exemplo utilizar Python como liguagem de programação por possuir vasta gama de bibliotecas voltadas para dados. Pode-se também utlizar o Airflow para \
+            orquestar as aplicações, tendo em vista que pode rodar local ou na nuvem. Para o armazenamento pode-se utilizar um datalake com 3 buckets para separar os dados brutos, pré-processados e prontos. \
+            Essa combinação de ferramentas já nos permite resolver uma grande gama de problemas relacionados a dados como a coleta, tratamento, análise estatística e 
             aplicação de modelos de machine learning.
         """)
 
     with st.expander('6. Que caminho você seguiria para criar um dashboard para utilização interna e externa com estes dados? Qual ferramenta utilizaria e como faria o desenvolvimento?'):
         st.markdown("""
-            Hoje tenho mais prática no uso do Streamlit (framework Python que estou utilizando para essa aplicação), mas também já utilizei outras ferramentas como o Grafana. \n
-            \n
-            
+            Um camminho possível é utilizando o Streamlit (framework Python, open-source, amplamente utilizado para dashboards de Machine Learning e Data Science), podendo ainda ser utilizado o Grafana (aplicação web para análise e visualização interativa). \
+            Contudo, recomendaria o Streamlit pela praticidade de manutenção e escalabilidade.            \n
         """)
 
 
