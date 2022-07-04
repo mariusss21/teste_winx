@@ -59,9 +59,10 @@ def perguntas():
             st.write('Dados faltantes por colunas:')
             df_null = df.isnull().sum()
             df_null = df_null[df_null > 0]
-            df_null.columns.values[0] = 'Quantidade'
+            df_null['Percentual'] = 0
+            #df_null.columns.values[0] = 'Quantidade'
             #df_null.rename(columns={0: 'Quantidade'}, inplace=True)
-            df_null['Percentual'] = df_null['Quantidade'] / df.shape[0] * 100
+            #df_null['Percentual'] = df_null['Quantidade'] / df.shape[0] * 100
             st.write(df_null)
 
     with st.expander('2. Esses dados já proveem algum tipo de insight? Quais?'):
