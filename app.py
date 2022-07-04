@@ -57,7 +57,8 @@ def perguntas():
 
         with col1:
             st.write('Dados faltantes por colunas:')
-            st.write(df.isnull().sum())
+            df_null = df.isnull().sum()
+            st.write(df_null)
 
     with st.expander('2. Esses dados já proveem algum tipo de insight? Quais?'):
         st.markdown("""
